@@ -59,11 +59,11 @@ def create_database():
 
     # Insert Sample Customers
     customers = [
-        (1, 'Alice Chen', 'alice.chen@example.com', 'California', '2023-02-01'),
-        (2, 'John Patel', 'john.patel@example.com', 'New York', '2023-05-15'),
-        (3, 'Maria Lopez', 'maria.lopez@example.com', 'Texas', '2022-11-30'),
-        (4, 'David Johnson', 'david.johnson@example.com', 'Florida', '2023-07-22'),
-        (5, 'Sofia Khan', 'sofia.khan@example.com', 'Illinois', '2023-04-10')
+        (1, 'Alice Chen', 'alice.chen@example.com', 'California', '2024-02-01'),
+        (2, 'John Patel', 'john.patel@example.com', 'New York', '2024-05-15'),
+        (3, 'Maria Lopez', 'maria.lopez@example.com', 'Texas', '2023-11-30'),
+        (4, 'David Johnson', 'david.johnson@example.com', 'Florida', '2024-07-22'),
+        (5, 'Sofia Khan', 'sofia.khan@example.com', 'Illinois', '2024-04-10')
     ]
 
     cursor.executemany(
@@ -89,14 +89,13 @@ def create_database():
 
     # Insert Sample Orders
     orders = [
-        (101, 1, '2024-01-12', 1240.00),
-        (102, 2, '2024-03-05', 340.00),
-        (103, 3, '2024-02-20', 1600.00),
-        (104, 1, '2024-04-02', 330.00),
-        (105, 4, '2024-05-15', 480.00),
-        (106, 5, '2024-06-10', 180.00)
-    ]
-
+    (101, 1, '2025-01-12', 1240.00),
+    (102, 2, '2025-03-05', 340.00),
+    (103, 3, '2025-02-20', 1600.00),
+    (104, 1, '2025-10-02', 330.00),
+    (105, 4, '2025-11-05', 480.00),
+    (106, 5, '2025-11-10', 180.00)
+]
     cursor.executemany(
         "INSERT OR IGNORE INTO orders VALUES (?, ?, ?, ?)",
         orders
