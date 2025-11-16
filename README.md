@@ -10,6 +10,7 @@ Built with **LangChain**, **FAISS VectorDB**, and **Gradio** for the Codecademy 
 
 - **Natural Language to SQL** - Ask questions in plain English, get accurate SQL queries
 - **RAG-Powered** - Uses vector database to semantically search table schemas
+- **SQL Explanations** - Beginner-friendly explanations of what each query does
 - **AI Insights** - Analyzes query results and provides business insights
 - **Conversation Memory** - Remembers context for follow-up questions
 - **Clean Chat Interface** - Interactive Gradio UI for easy interaction

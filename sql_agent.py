@@ -119,6 +119,19 @@ def ask_question(db, vector_store, llm, memory, question):
         RESULTS: {results}
         Insight:"""
 
+        explanation_prompt = f"""Explain this SQL query in simple, beginner-friendly terms.
+        Describe what each part does (SELECT, FROM, JOIN, WHERE, GROUP BY, ORDER BY, etc.) in plain English.
+        Keep it to 2-3 sentences.
+
+SQL Query:
+{sql_query}
+
+Explanation:"""
+
+        explanation_response = llm.invoke(explanation_prompt)
+        explanation = explanation_response.content.strip()
+        print(f"\n📖 Explanation:\n{explanation}")
+
         insight_response = llm.invoke(insight_prompt)
         insight = insight_response.content.strip()
         print(f"\n💡 Insight:\n{insight}")
@@ -130,6 +143,7 @@ def ask_question(db, vector_store, llm, memory, question):
             "sql_query": sql_query,
             "results": results,
             "insight": insight,
+            "explanation": explanation,
             "tables_used": selected_tables,
         }
 
